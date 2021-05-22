@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inventory </title>
+    <meta charset="UTF-8">
+        <!-- favicon -->
+        <!-- <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <!-- <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-32x32.png">
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <!-- css stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+        
+        <!-- font styles cdn -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- bootstrap navbar -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="main-logo-img mt-3" href="#"><img src="/static/img/inventory.png" alt="sheep-logo" height="50%" width="50%">
+                <!-- <a class="navbar-brand" href="index.html">JobPortal</a> -->
+              </a>
+              
+              <div class="row donate-sponsor">
+                <a type="button" class="btn btn-success mr-1" id="donate" href="add">Add Products</a>
+                <a type="button" class="btn btn-warning mr-1" id="sponsor" href="sell">Sell Products</a>
+                <a type="button" class="btn btn-primary mr-1" id="sponsor" href="logout">Logout</a>
+            </div>
+          </nav>
+          <!-- navbar ends -->
+
+        <!-- what we focus on -->
+        <div class="msg" align="center"><strong>{{ msg }}</strong></div>
+
+        <table class="table table-hover" >
+            <thead>
+             <tr>
+               <td align="center"><strong>Product Name</strong></th>
+               <td align="center"><strong>Product Quantity</strong></th>
+             </tr>
+            </thead>
+            {% for row in record %}
+            <tr>
+              <td align="center">{{ row[1] }}</td>
+              <td align="center">{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- footer starts -->
+          <!-- Site footer -->
+          
+       
+
+          </body>
+</html>

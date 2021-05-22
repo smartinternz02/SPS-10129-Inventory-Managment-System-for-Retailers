@@ -1,0 +1,5 @@
+Flask
+requests
+jsonify
+mysql-connector-python
+flask_mysqldb
